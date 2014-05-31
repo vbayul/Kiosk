@@ -80,7 +80,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox2.Text != "" && textBox3.Text != "")
             {
-                dataGridView1.Rows.Add( "ПП Козырев",textBox1.Text, textBox2.Text, textBox3.Text);
+                dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text);
                 ClearText();
             }
             else
@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
                 while (i < dataGridView1.RowCount)
                 {
                     // добавить товара в таблицу ценников
-                    this.pricelistTableAdapter1.Insert("ПП Козырев", dataGridView1[1, i].Value.ToString(), dataGridView1[2, i].Value.ToString(), dataGridView1[3, i].Value.ToString());
+                    this.pricelistTableAdapter1.Insert(dataGridView1[0, i].Value.ToString(), dataGridView1[1, i].Value.ToString(), dataGridView1[2, i].Value.ToString());
                     i++;
                 }
                 // очищаем грид от предыдущих данных

@@ -21,6 +21,9 @@ namespace WindowsFormsApplication1
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.users". При необходимости она может быть перемещена или удалена.
             this.usersTableAdapter.Fill(this.kioskDataSet.users);
 
+            //.GetDataBy3(textBox1.Text)[0][1].ToString();
+            textBox4.Text = settingTableAdapter1.GetDataBy1("price")[0][1].ToString();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +43,12 @@ namespace WindowsFormsApplication1
             textBox2.Text = dataGridView1[2, dataGridView1.CurrentCell.RowIndex].Value.ToString();
             textBox3.Text = dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString();
             checkBox1.Checked = Convert.ToBoolean(Convert.ToInt32(dataGridView1[3, dataGridView1.CurrentCell.RowIndex].Value.ToString()));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            settingTableAdapter1.UpdateQuery(textBox4.Text, "price");
+            MessageBox.Show("Новое название сохранено.");
         }
     }
 }

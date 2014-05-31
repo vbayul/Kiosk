@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comp_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nothing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,6 +45,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.goodsTableAdapter1 = new WindowsFormsApplication1.kioskDataSetTableAdapters.goodsTableAdapter();
             this.pricelistTableAdapter1 = new WindowsFormsApplication1.kioskDataSetTableAdapters.pricelistTableAdapter();
+            this.barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nothing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +69,6 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.comp_name,
             this.barcode,
             this.name,
             this.price,
@@ -97,39 +95,6 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(656, 356);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // comp_name
-            // 
-            this.comp_name.HeaderText = "Название фирмы";
-            this.comp_name.Name = "comp_name";
-            this.comp_name.ReadOnly = true;
-            this.comp_name.Visible = false;
-            // 
-            // barcode
-            // 
-            this.barcode.HeaderText = "Штрихкод";
-            this.barcode.Name = "barcode";
-            this.barcode.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Название";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 300;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Цена";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // nothing
-            // 
-            this.nothing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nothing.HeaderText = "";
-            this.nothing.Name = "nothing";
-            this.nothing.ReadOnly = true;
             // 
             // button1
             // 
@@ -245,6 +210,32 @@
             // 
             this.pricelistTableAdapter1.ClearBeforeFill = true;
             // 
+            // barcode
+            // 
+            this.barcode.HeaderText = "Штрихкод";
+            this.barcode.Name = "barcode";
+            this.barcode.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Название";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 300;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // nothing
+            // 
+            this.nothing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nothing.HeaderText = "";
+            this.nothing.Name = "nothing";
+            this.nothing.ReadOnly = true;
+            // 
             // Form_price
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,7 +277,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private kioskDataSetTableAdapters.pricelistTableAdapter pricelistTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comp_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;

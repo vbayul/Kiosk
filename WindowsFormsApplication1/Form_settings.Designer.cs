@@ -48,6 +48,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.settingTableAdapter1 = new WindowsFormsApplication1.kioskDataSetTableAdapters.settingTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kioskDataSet)).BeginInit();
@@ -195,7 +196,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(388, 194);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(157, 20);
+            this.textBox4.Size = new System.Drawing.Size(159, 20);
             this.textBox4.TabIndex = 5;
             // 
             // label3
@@ -211,10 +212,15 @@
             // 
             this.button2.Location = new System.Drawing.Point(387, 220);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(160, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "Редактировать";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // settingTableAdapter1
+            // 
+            this.settingTableAdapter1.ClearBeforeFill = true;
             // 
             // Form_settings
             // 
@@ -264,5 +270,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private kioskDataSetTableAdapters.settingTableAdapter settingTableAdapter1;
     }
 }

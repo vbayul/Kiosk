@@ -20,6 +20,8 @@ namespace WindowsFormsApplication1
         {
             pricelistTableAdapter1.Fill(kioskDataSet1.pricelist);
 
+            settingTableAdapter1.FillBy(kioskDataSet1.setting, "price");
+
             CrystalReport_pricelist priceReport = new CrystalReport_pricelist();
             priceReport.SetDataSource(kioskDataSet1);
             crystalReportViewer1.ReportSource = priceReport;
