@@ -32,10 +32,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.goodseditBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kioskDataSet = new WindowsFormsApplication1.kioskDataSet();
-            this.button2 = new System.Windows.Forms.Button();
-            this.goodseditTableAdapter = new WindowsFormsApplication1.kioskDataSetTableAdapters.goodseditTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nametypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +42,10 @@
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricebayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodseditBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kioskDataSet = new WindowsFormsApplication1.kioskDataSet();
+            this.button2 = new System.Windows.Forms.Button();
+            this.goodseditTableAdapter = new WindowsFormsApplication1.kioskDataSetTableAdapters.goodseditTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodseditBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kioskDataSet)).BeginInit();
@@ -65,7 +65,7 @@
             this.button1.Location = new System.Drawing.Point(611, 293);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 2;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -97,32 +97,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(717, 246);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // goodseditBindingSource
-            // 
-            this.goodseditBindingSource.DataMember = "goodsedit";
-            this.goodseditBindingSource.DataSource = this.kioskDataSet;
-            // 
-            // kioskDataSet
-            // 
-            this.kioskDataSet.DataSetName = "kioskDataSet";
-            this.kioskDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(673, 293);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // goodseditTableAdapter
-            // 
-            this.goodseditTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -198,6 +173,31 @@
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            // 
+            // goodseditBindingSource
+            // 
+            this.goodseditBindingSource.DataMember = "goodsedit";
+            this.goodseditBindingSource.DataSource = this.kioskDataSet;
+            // 
+            // kioskDataSet
+            // 
+            this.kioskDataSet.DataSetName = "kioskDataSet";
+            this.kioskDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(673, 293);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Отмена";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // goodseditTableAdapter
+            // 
+            this.goodseditTableAdapter.ClearBeforeFill = true;
             // 
             // Form_goods
             // 

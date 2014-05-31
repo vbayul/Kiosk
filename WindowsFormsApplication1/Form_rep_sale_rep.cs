@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Form_rep_sale_rep : Form
     {
-        string[] data = new string[3];
+        string[] data = new string[4];
 
         public Form_rep_sale_rep(string[] data)
         {
@@ -21,6 +21,52 @@ namespace WindowsFormsApplication1
 
         private void Form_rep_sale_rep_Load(object sender, EventArgs e)
         {
+            if (data[3] != "0")
+            {
+                if (data[2] != "0")
+                {
+                    // выбран товар и выбран развернутый отчет
+                    sale_goodsTableAdapter1.FillBy5(kioskDataSet1.sale_goods, Convert.ToDateTime(data[0]), Convert.ToDateTime(data[1]), Convert.ToInt32(data[3]));
+
+                    CrystalReport_sale saleReport = new CrystalReport_sale();
+                    saleReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = saleReport;
+                }
+                else
+                {
+                    //выбран товар и сокращенный отчет
+                    sale_goodsTableAdapter1.FillBy4(kioskDataSet1.sale_goods, Convert.ToDateTime(data[0]), Convert.ToDateTime(data[1]), Convert.ToInt32(data[3]));
+
+                    CrystalReport_sale saleReport = new CrystalReport_sale();
+                    saleReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = saleReport;
+                }
+            }
+            else
+            {
+                //не выбран товар
+                if (data[2] != "0")
+                {
+                    //не выбран товар и выбран развернутый
+                    sale_goodsTableAdapter1.FillBy1(kioskDataSet1.sale_goods, Convert.ToDateTime(data[0]), Convert.ToDateTime(data[1]));
+
+                    CrystalReport_sale saleReport = new CrystalReport_sale();
+                    saleReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = saleReport;
+                }
+                else
+                {
+                    //не выбран товар и скоращенный
+                    sale_goodsTableAdapter1.FillBy3(kioskDataSet1.sale_goods, Convert.ToDateTime(data[0]), Convert.ToDateTime(data[1]));
+
+                    CrystalReport_sale saleReport = new CrystalReport_sale();
+                    saleReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = saleReport;
+                }
+
+            }
+
+            /* старая форма отчета
             if (data[2] == "1")
             {
                 sale_goodsTableAdapter1.FillBy1(kioskDataSet1.sale_goods, Convert.ToDateTime(data[0]), Convert.ToDateTime(data[1]));
@@ -37,7 +83,7 @@ namespace WindowsFormsApplication1
                 CrystalReport_sale saleReport = new CrystalReport_sale();
                 saleReport.SetDataSource(kioskDataSet1);
                 crystalReportViewer1.ReportSource = saleReport;
-            }
+            }*/
         }
     }
 }

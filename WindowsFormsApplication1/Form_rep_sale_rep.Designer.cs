@@ -68,7 +68,7 @@
             this.ClientSize = new System.Drawing.Size(934, 473);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Form_rep_sale_rep";
-            this.Text = "Form1";
+            this.Text = "Продажи";
             this.Load += new System.EventHandler(this.Form_rep_sale_rep_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kioskDataSet1)).EndInit();
             this.ResumeLayout(false);

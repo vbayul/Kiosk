@@ -10572,7 +10572,7 @@ WHERE        (in_art.id_goods = ?) AND (in_art.date_time > ?) AND (in_art.date_t
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[5];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[7];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        sale.date_time, goods.barcode, goods.name, sale.[count], sale.price" +
@@ -10610,7 +10610,7 @@ Order by sale.date_time DESC";
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        Format(sale.date_time, 'DD.MM.YYYY') AS Expr1, goods.barcode, goods.name, SUM(sale.[count]) AS [count], sale.price_sale, 
+            this._commandCollection[4].CommandText = @"SELECT        Format(sale.date_time, 'DD.MM.YYYY') AS date_time, goods.barcode, goods.name, SUM(sale.[count]) AS [count], sale.price_sale, 
                          SUM(ROUND(sale.[count] * sale.price_sale, 2)) AS [sum]
 FROM            (goods INNER JOIN
                          sale ON goods.id = sale.id_goods)
@@ -10619,6 +10619,28 @@ GROUP BY goods.barcode, goods.name, sale.price_sale, Format(sale.date_time, 'DD.
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT        Format(sale.date_time, 'DD.MM.YYYY') AS date_time, goods.barcode, goods.name, SUM(sale.[count]) AS [count], sale.price_sale, 
+                         SUM(ROUND(sale.[count] * sale.price_sale, 2)) AS [sum]
+FROM            (goods INNER JOIN
+                         sale ON goods.id = sale.id_goods)
+WHERE        (sale.date_time > ?) AND (sale.date_time < ?) AND (sale.id_goods = ?)
+GROUP BY goods.barcode, goods.name, sale.price_sale, Format(sale.date_time, 'DD.MM.YYYY')";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_goods", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_goods", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT        sale.date_time, goods.barcode, goods.name, sale.[count], sale.price_sale, round(sale.[count] * sale.price_sale,2) AS [sum]
+FROM            (goods INNER JOIN
+                         sale ON goods.id = sale.id_goods)
+WHERE sale.date_time > ? and sale.date_time < ? and sale.id_goods = ?";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_goods", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_goods", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10831,6 +10853,126 @@ GROUP BY goods.barcode, goods.name, sale.price_sale, Format(sale.date_time, 'DD.
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            kioskDataSet.sale_goodsDataTable dataTable = new kioskDataSet.sale_goodsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy4(kioskDataSet.sale_goodsDataTable dataTable, global::System.Nullable<global::System.DateTime> date_time, global::System.Nullable<global::System.DateTime> date_time1, global::System.Nullable<int> id_goods) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((date_time.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(date_time.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((date_time1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(date_time1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((id_goods.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(id_goods.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual kioskDataSet.sale_goodsDataTable GetDataBy4(global::System.Nullable<global::System.DateTime> date_time, global::System.Nullable<global::System.DateTime> date_time1, global::System.Nullable<int> id_goods) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((date_time.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(date_time.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((date_time1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(date_time1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((id_goods.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(id_goods.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            kioskDataSet.sale_goodsDataTable dataTable = new kioskDataSet.sale_goodsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy5(kioskDataSet.sale_goodsDataTable dataTable, global::System.Nullable<global::System.DateTime> date_time, global::System.Nullable<global::System.DateTime> date_time1, global::System.Nullable<int> id_goods) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((date_time.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(date_time.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((date_time1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(date_time1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((id_goods.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(id_goods.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual kioskDataSet.sale_goodsDataTable GetDataBy5(global::System.Nullable<global::System.DateTime> date_time, global::System.Nullable<global::System.DateTime> date_time1, global::System.Nullable<int> id_goods) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((date_time.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(date_time.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((date_time1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(date_time1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((id_goods.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(id_goods.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             kioskDataSet.sale_goodsDataTable dataTable = new kioskDataSet.sale_goodsDataTable();
             this.Adapter.Fill(dataTable);

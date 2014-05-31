@@ -79,13 +79,14 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(203, 20);
             this.textBox3.TabIndex = 2;
+            this.textBox3.TabStop = false;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(401, 27);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(82, 20);
-            this.textBox4.TabIndex = 3;
+            this.textBox4.TabIndex = 2;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // button1
@@ -93,7 +94,7 @@
             this.button1.Location = new System.Drawing.Point(5, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Товары";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -103,7 +104,7 @@
             this.button2.Location = new System.Drawing.Point(489, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 23);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 3;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -113,7 +114,7 @@
             this.button3.Location = new System.Drawing.Point(527, 25);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(32, 23);
-            this.button3.TabIndex = 6;
+            this.button3.TabIndex = 4;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -162,6 +163,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(553, 234);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.TabStop = false;
             // 
             // id
             // 
@@ -203,6 +205,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 8;
+            this.button4.TabStop = false;
             this.button4.Text = "Очистить";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -214,6 +217,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 9;
+            this.button5.TabStop = false;
             this.button5.Text = "Сохранить";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);

@@ -5,6 +5,3 @@
     }
 }
 
-namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
-
-}

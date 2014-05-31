@@ -61,14 +61,14 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(12, 75);
+            this.textBox1.Location = new System.Drawing.Point(15, 82);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
+            this.textBox1.Size = new System.Drawing.Size(189, 20);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 101);
+            this.textBox2.Location = new System.Drawing.Point(15, 108);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(28, 20);
             this.textBox2.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(227, 73);
+            this.button1.Location = new System.Drawing.Point(210, 80);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 23);
             this.button1.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(189, 120);
+            this.button2.Location = new System.Drawing.Point(189, 118);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 23);
             this.button2.TabIndex = 5;
@@ -96,11 +96,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(256, 73);
+            this.button3.Location = new System.Drawing.Point(242, 80);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(26, 23);
+            this.button3.Size = new System.Drawing.Size(36, 23);
             this.button3.TabIndex = 6;
-            this.button3.Text = "-";
+            this.button3.Text = "Все";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 152);
+            this.ClientSize = new System.Drawing.Size(290, 150);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
