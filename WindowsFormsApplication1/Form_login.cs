@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
 
         private void passCheck()
         {
+            // проверка на валидность пароля
             pass = this.usersTableAdapter.ScalarQuery(Convert.ToInt32(comboBox1.SelectedValue.ToString())).ToString();
 
             if (textBox1.Text == pass)

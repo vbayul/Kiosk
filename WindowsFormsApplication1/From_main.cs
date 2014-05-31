@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class From_main : Form
     {
-
+        // переменные диапазано начала и окончания текущего дня.
         DateTime currdaystart;
         DateTime currdayend;        
 
@@ -78,6 +78,8 @@ namespace WindowsFormsApplication1
                     textBox3.Enabled = false;
                 }
                 textBox5.Text = arr[4];
+                // передаем фоку полю с количеством товара
+                textBox4.Focus();
             }
         }
 
@@ -131,6 +133,7 @@ namespace WindowsFormsApplication1
                     this.textBox3.Text = this.goodsTableAdapter1.GetDataBy3(textBox1.Text)[0][4].ToString();
                     this.textBox5.Text = this.goodsTableAdapter1.GetDataBy3(textBox1.Text)[0][0].ToString();
                     textBox3.Enabled = Convert.ToBoolean(Convert.ToInt32(this.goodsTableAdapter1.GetDataBy3(textBox1.Text)[0][5].ToString()));
+                    textBox4.Focus();
                 }
                 else
                 {
@@ -163,6 +166,11 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            goodsSale();
+        }
+
+        private void goodsSale()
+        {
             // проверку на заполненность
             if (textBox3.Text != "" && textBox5.Text != "" && textBox4.Text != "" && label7.Text != "0")
             {
@@ -185,7 +193,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Не все поля заполенны!");
             }
         }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             clearText();
@@ -193,6 +201,7 @@ namespace WindowsFormsApplication1
 
         private void clearText()
         {
+            // функция очистки заполненых текстбоксов
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
@@ -200,6 +209,7 @@ namespace WindowsFormsApplication1
             textBox5.Clear();
             label7.ResetText();
             textBox3.Enabled = false;
+            textBox1.Focus();
         }
 
         private void расходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -211,6 +221,7 @@ namespace WindowsFormsApplication1
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // разрешение ввода лишь цифр
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
             {
                 e.Handled = true;
@@ -240,6 +251,7 @@ namespace WindowsFormsApplication1
 
         public void debit()
         {
+            // перещест текущей прибыли, расходов и остатка денег в кассе на текущий день
             if (saleTableAdapter.ScalarQuery(currdaystart, currdayend).ToString() == "0")
             {
                 label2.Text = "0";
@@ -290,6 +302,14 @@ namespace WindowsFormsApplication1
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                goodsSale();
             }
         }
     }

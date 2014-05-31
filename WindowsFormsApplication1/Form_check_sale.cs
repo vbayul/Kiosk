@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // проверка есть ли продажи вообще
             if (dataGridView1.RowCount != 0)
             {
                 this.DialogResult = DialogResult.OK;
@@ -40,6 +41,7 @@ namespace WindowsFormsApplication1
 
         public string[] RetunData()
         {
+            // функция возвращает данные по выбранной продаже.
             string[] stringArray = new string[7];
             stringArray[0] = dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString(); 
             stringArray[1] = dataGridView1[1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
