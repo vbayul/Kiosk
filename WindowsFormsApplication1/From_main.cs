@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             // создаем дочернюю форму с товарами.            
-            Form_goods goods_bay = new Form_goods();
+            Form_goods goods_bay = new Form_goods("0");
             goods_bay.Owner = this;
             goods_bay.ShowDialog(this);
 
@@ -174,6 +174,8 @@ namespace WindowsFormsApplication1
             // проверку на заполненность
             if (textBox3.Text != "" && textBox5.Text != "" && textBox4.Text != "" && label7.Text != "0")
             {
+                // добавиьт хук с проверкой на тип товара
+                // и записывать продажу безснятия товара с остатков
                 // запись продажи товара 
                 saleTableAdapter.Insert(textBox5.Text, DateTime.Now, textBox4.Text, textBox3.Text);
 

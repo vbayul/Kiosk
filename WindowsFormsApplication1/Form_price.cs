@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form_goods goods_price = new Form_goods();
+            Form_goods goods_price = new Form_goods("0");
             goods_price.Owner = this;
             goods_price.ShowDialog(this);
 

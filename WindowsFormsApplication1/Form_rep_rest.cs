@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] data = new string[2];
+            string[] data = new string[3];
 
             if (radioButton1.Checked == true)
             {
@@ -53,10 +53,41 @@ namespace WindowsFormsApplication1
                 data[0] = "1";
                 data[1] = textBox1.Text;
             }
+            if (textBox3.Text == "")
+            {
+                data[2] = "0";
+            }
+            else
+            {
+                data[2] = textBox3.Text;
+            }
+
+
 
             Form_rep_rest_rep rep_rest_rep = new Form_rep_rest_rep(data);
             rep_rest_rep.Owner = this;
             rep_rest_rep.ShowDialog(this);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            textBox3.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_goods_type goods_type = new Form_goods_type();
+            goods_type.Owner = this;
+            goods_type.ShowDialog(this);
+
+            if (goods_type.DialogResult == DialogResult.OK)
+            {
+                string[] arr = new string[2];
+                arr = goods_type.ReturnData();
+                textBox3.Text = arr[0];
+                textBox2.Text = arr[1];
+            }
         }
     }
 }

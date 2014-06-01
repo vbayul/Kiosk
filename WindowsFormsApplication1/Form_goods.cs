@@ -11,9 +11,11 @@ namespace WindowsFormsApplication1
 {
     public partial class Form_goods : Form
     {
-        public Form_goods()
+        string type;
+        public Form_goods(string t)
         {
             InitializeComponent();
+            type = t;
         }
  
 
@@ -54,8 +56,16 @@ namespace WindowsFormsApplication1
 
         private void Form_goods_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
-            this.goodseditTableAdapter.FillBy(this.kioskDataSet.goodsedit);
+            if (type == "1")
+            {
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
+                this.goodseditTableAdapter.FillBy1(this.kioskDataSet.goodsedit, Convert.ToInt32(type));
+            }
+            else
+            {
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
+                this.goodseditTableAdapter.FillBy(this.kioskDataSet.goodsedit);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

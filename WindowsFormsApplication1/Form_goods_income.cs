@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form_goods income_goods = new Form_goods();
+            Form_goods income_goods = new Form_goods("1");
             income_goods.Owner = this;
             income_goods.ShowDialog(this);
 

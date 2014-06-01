@@ -21,21 +21,43 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (data[0] == "0")
+            if (data[2] == "0")
             {
-                goodsTableAdapter1.FillBy3(kioskDataSet1.goods);
+                if (data[0] == "0")
+                {
+                    goodsTableAdapter1.FillBy3(kioskDataSet1.goods);
 
-                CrystalReport_rest restReport = new CrystalReport_rest();
-                restReport.SetDataSource(kioskDataSet1);
-                crystalReportViewer1.ReportSource = restReport;
+                    CrystalReport_rest restReport = new CrystalReport_rest();
+                    restReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = restReport;
+                }
+                else
+                {
+                    goodsTableAdapter1.FillBy2(kioskDataSet1.goods, Convert.ToInt32(data[1]));
+
+                    CrystalReport_rest restReport = new CrystalReport_rest();
+                    restReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = restReport;
+                }
             }
             else
             {
-                goodsTableAdapter1.FillBy2(kioskDataSet1.goods, Convert.ToInt32(data[1]));
+                if (data[0] == "0")
+                {
+                    goodsTableAdapter1.FillBy4(kioskDataSet1.goods, Convert.ToInt32(data[2]));
 
-                CrystalReport_rest restReport = new CrystalReport_rest();
-                restReport.SetDataSource(kioskDataSet1);
-                crystalReportViewer1.ReportSource = restReport;
+                    CrystalReport_rest restReport = new CrystalReport_rest();
+                    restReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = restReport;
+                }
+                else
+                {
+                    goodsTableAdapter1.FillBy5(kioskDataSet1.goods, Convert.ToInt32(data[2]),Convert.ToInt32(data[1]));
+
+                    CrystalReport_rest restReport = new CrystalReport_rest();
+                    restReport.SetDataSource(kioskDataSet1);
+                    crystalReportViewer1.ReportSource = restReport;
+                }
             }
         }
     }
