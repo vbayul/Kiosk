@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
                 this.outcomeTableAdapter.Insert(textBox1.Text, textBox2.Text, DateTime.Now);
                 ClearText();
                 MessageBox.Show("Расход добавлен!");
-
+                this.Close();
              }
             else
             {
@@ -40,6 +40,14 @@ namespace WindowsFormsApplication1
         {
             textBox1.Clear();
             textBox2.Clear();
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

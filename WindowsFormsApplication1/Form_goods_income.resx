@@ -133,9 +133,9 @@
     <value>True</value>
   </metadata>
   <metadata name="goodsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>308, 20</value>
+    <value>169, 20</value>
   </metadata>
   <metadata name="in_artTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 23</value>
+    <value>21, 20</value>
   </metadata>
 </root>

@@ -148,5 +148,13 @@ namespace WindowsFormsApplication1
                 e.Handled = true;
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount != 0)
+            {
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            }
+        }
     }
 }

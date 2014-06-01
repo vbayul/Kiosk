@@ -69,5 +69,13 @@ namespace WindowsFormsApplication1
         {
             dateTimePicker1.Value = DateTime.Today;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount != 0)
+            {
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            }
+        }
     }
 }

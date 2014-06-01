@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
             catch (System.FormatException)
             {
                 textBox4.Clear();
-                label7.Text = "0";
+                label7.Text = "";
             }
             // проверка на заполененность поля
             if (textBox4.Text != "")
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                label7.Text = "0";
+                label7.Text = "";
             }
         }
 
@@ -174,15 +174,15 @@ namespace WindowsFormsApplication1
             // проверку на заполненность
             if (textBox3.Text != "" && textBox5.Text != "" && textBox4.Text != "" && label7.Text != "0")
             {
-                // добавиьт хук с проверкой на тип товара
-                // и записывать продажу безснятия товара с остатков
                 // запись продажи товара 
                 saleTableAdapter.Insert(textBox5.Text, DateTime.Now, textBox4.Text, textBox3.Text);
 
-                // снятие товара с остатков
-
-                goodsTableAdapter1.UpdateQuery3(textBox4.Text, textBox5.Text);
-
+                if (this.goodsTableAdapter1.GetDataBy(Convert.ToInt32(textBox5.Text))[0][6].ToString() == "1")
+                {
+                    // снятие товара с остатков
+                    goodsTableAdapter1.UpdateQuery3(textBox4.Text, textBox5.Text);
+                }
+                
                 // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.sale_goods". При необходимости она может быть перемещена или удалена.
                 this.sale_goodsTableAdapter.FillBy(this.kioskDataSet.sale_goods, currdaystart, currdayend);
 
@@ -193,6 +193,7 @@ namespace WindowsFormsApplication1
             else
             {
                 MessageBox.Show("Не все поля заполенны!");
+                textBox5.Focus();
             }
         }
         
