@@ -9370,7 +9370,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit, 
@@ -9390,9 +9390,17 @@ WHERE status  =  1";
             this._commandCollection[2].CommandText = @"SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit
 FROM            (goods INNER JOIN
                          goods_type ON goods.type = goods_type.id)
-WHERE        (goods.type = ?)";
+WHERE        (goods.type = ?) and (goods.status =1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit
+FROM            (goods INNER JOIN
+                         goods_type ON goods.type = goods_type.id)
+WHERE        (goods.type = ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9468,6 +9476,42 @@ WHERE        (goods.type = ?)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodseditDataTable GetDataBy1(global::System.Nullable<int> type) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((type.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            kioskDataSet.goodseditDataTable dataTable = new kioskDataSet.goodseditDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(kioskDataSet.goodseditDataTable dataTable, global::System.Nullable<int> type) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((type.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual kioskDataSet.goodseditDataTable GetDataBy2(global::System.Nullable<int> type) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((type.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
             }

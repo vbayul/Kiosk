@@ -59,12 +59,17 @@ namespace WindowsFormsApplication1
             if (type == "1")
             {
                 // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
-                this.goodseditTableAdapter.FillBy1(this.kioskDataSet.goodsedit, Convert.ToInt32(type));
+                this.goodseditTableAdapter.FillBy1(this.kioskDataSet.goodsedit, 1);
             }
-            else
+            else if (type == "0")
             {
                 // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
                 this.goodseditTableAdapter.FillBy(this.kioskDataSet.goodsedit);
+            }
+            else if (type == "2")
+            {
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
+                this.goodseditTableAdapter.FillBy2(this.kioskDataSet.goodsedit,1);
             }
         }
 
