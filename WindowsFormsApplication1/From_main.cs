@@ -315,5 +315,12 @@ namespace WindowsFormsApplication1
                 goodsSale();
             }
         }
+
+        private void дневнойToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_rep_by_day rep_by_day = new Form_rep_by_day();
+            rep_by_day.Owner = this;
+            rep_by_day.ShowDialog();
+        }
     }
 }

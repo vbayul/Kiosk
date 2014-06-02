@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form_goods : Form
+    public partial class Form_goods : Form 
     {
         string type;
         public Form_goods(string t)

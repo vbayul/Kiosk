@@ -80,6 +80,12 @@
       <DependentUpon>CrystalReport_check_print.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport_rep_by_day.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_rep_by_day.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport_sale.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +133,18 @@
     </Compile>
     <Compile Include="Form_check_sale.Designer.cs">
       <DependentUpon>Form_check_sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_rep_by_day.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_rep_by_day.Designer.cs">
+      <DependentUpon>Form_rep_by_day.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_rep_by_day_rep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_rep_by_day_rep.Designer.cs">
+      <DependentUpon>Form_rep_by_day_rep.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_rep_sale_rep.cs">
       <SubType>Form</SubType>
@@ -251,6 +269,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_check_print.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_rep_by_day.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_rep_by_day.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport_sale.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_sale.cs</LastGenOutput>
@@ -279,6 +301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_check_sale.resx">
       <DependentUpon>Form_check_sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_rep_by_day.resx">
+      <DependentUpon>Form_rep_by_day.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_rep_by_day_rep.resx">
+      <DependentUpon>Form_rep_by_day_rep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_rep_sale_rep.resx">
       <DependentUpon>Form_rep_sale_rep.cs</DependentUpon>
