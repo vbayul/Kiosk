@@ -32,16 +32,17 @@ namespace WindowsFormsApplication1
 
             if (login.DialogResult == DialogResult.OK)
             {
-                // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.sale_goods". При необходимости она может быть перемещена или удалена.
-                this.sale_goodsTableAdapter.FillBy(this.kioskDataSet.sale_goods, currdaystart, currdayend);
-
+ 
                 Data.arr = login.ReturnData();
 
                 currdaystart = DateTime.Now.Date;
                 currdayend = currdaystart.AddHours(23).AddMinutes(59);
 
-                //MessageBox.Show(Convert.ToString(currdaystart) + " " + Convert.ToString(currdayend));
-                //MessageBox.Show(Data.arr[0]+" "+Data.arr[1]);
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.sale_goods". При необходимости она может быть перемещена или удалена.
+                this.sale_goodsTableAdapter.FillBy(this.kioskDataSet.sale_goods, currdaystart, currdayend);
+
+                debit();
+
                 timer1.Enabled = Enabled;
 
                 if (Data.arr[1] == "1")
