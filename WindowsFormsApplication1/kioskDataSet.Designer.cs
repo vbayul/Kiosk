@@ -7903,7 +7903,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[13];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[14];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, name, barcode, price_bay, price_sale, edit, type, [count], status FROM" +
@@ -7911,88 +7911,93 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT    status, type\r\nFROM            goods\r\nWHERE         (id= ?)";
+            this._commandCollection[1].CommandText = "DELETE FROM goods\r\nWHERE        (id = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT id, name, barcode, price_bay, price_sale, edit, type, [count], status FROM" +
-                " goods where barcode = ?";
+            this._commandCollection[2].CommandText = "SELECT    status, type\r\nFROM            goods\r\nWHERE         (id= ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        barcode, name, price_bay, price_sale, [count]\r\nFROM            good" +
-                "s\r\nWHERE        ([count] < ?)";
+            this._commandCollection[3].CommandText = "SELECT id, name, barcode, price_bay, price_sale, edit, type, [count], status FROM" +
+                " goods where barcode = ?";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.Single, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT        barcode, name, price_bay, price_sale, [count]\r\nFROM            good" +
-                "s";
+                "s\r\nWHERE        ([count] < ?)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.Single, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT        barcode, name, price_bay, price_sale, [count]\r\nFROM            good" +
-                "s\r\nWHERE        (type = ?)";
+                "s";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT        barcode, name, price_bay, price_sale, [count]\r\nFROM            good" +
-                "s\r\nWHERE        (type = ?) and  ([count] < ?)";
+                "s\r\nWHERE        (type = ?)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "INSERT INTO `goods` (`name`, `barcode`, `price_bay`, `price_sale`, `edit`, `type`" +
-                ", `count`, `status`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            this._commandCollection[7].CommandText = "SELECT        barcode, name, price_bay, price_sale, [count]\r\nFROM            good" +
+                "s\r\nWHERE        (type = ?) and  ([count] < ?)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_bay", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_bay", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_sale", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_sale", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("edit", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "edit", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.Single, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[8] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT        COUNT(barcode) AS [count]\r\nFROM            goods\r\nWHERE        (bar" +
-                "code = ?)";
+            this._commandCollection[8].CommandText = "INSERT INTO `goods` (`name`, `barcode`, `price_bay`, `price_sale`, `edit`, `type`" +
+                ", `count`, `status`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "name", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_bay", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_bay", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_sale", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_sale", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("edit", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "edit", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.Single, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "UPDATE `goods` SET `status` = ? WHERE (`id` = ?) ";
+            this._commandCollection[9].CommandText = "SELECT        COUNT(barcode) AS [count]\r\nFROM            goods\r\nWHERE        (bar" +
+                "code = ?)";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[10] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "UPDATE `goods` SET `name` = ?, `price_bay` = ?, `price_sale` = ?, `edit` = ?, `ty" +
-                "pe` = ?, `barcode` = ? WHERE (`id` = ?) ";
+            this._commandCollection[10].CommandText = "UPDATE `goods` SET `status` = ? WHERE (`id` = ?) ";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_bay", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_bay", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_sale", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_sale", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("edit", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "edit", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[11] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "UPDATE `goods` SET  `count` = [count] + ? WHERE (`id` = ?) ";
+            this._commandCollection[11].CommandText = "UPDATE `goods` SET `name` = ?, `price_bay` = ?, `price_sale` = ?, `edit` = ?, `ty" +
+                "pe` = ?, `barcode` = ? WHERE (`id` = ?) ";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_bay", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_bay", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_sale", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "price_sale", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("edit", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "edit", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("barcode", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "barcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[12] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = "UPDATE `goods` SET  `count` = [count] - ? WHERE (`id` = ?) ";
+            this._commandCollection[12].CommandText = "UPDATE `goods` SET  `count` = [count] + ? WHERE (`id` = ?) ";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[12].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[12].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(7)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[12].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[13] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[13].Connection = this.Connection;
+            this._commandCollection[13].CommandText = "UPDATE `goods` SET  `count` = [count] - ? WHERE (`id` = ?) ";
+            this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[13].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("count", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "count", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[13].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8024,7 +8029,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(kioskDataSet.goodsDataTable dataTable, int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8038,7 +8043,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodsDataTable GetDataBy(int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             kioskDataSet.goodsDataTable dataTable = new kioskDataSet.goodsDataTable();
             this.Adapter.Fill(dataTable);
@@ -8050,7 +8055,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy1(kioskDataSet.goodsDataTable dataTable, string barcode) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((barcode == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8069,7 +8074,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodsDataTable GetDataBy3(string barcode) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((barcode == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8086,7 +8091,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy2(kioskDataSet.goodsDataTable dataTable, global::System.Nullable<decimal> count) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((count.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(count.Value));
             }
@@ -8105,7 +8110,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodsDataTable GetDataBy7(global::System.Nullable<decimal> count) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((count.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(count.Value));
             }
@@ -8122,7 +8127,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy3(kioskDataSet.goodsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8135,7 +8140,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodsDataTable GetDataBy8() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             kioskDataSet.goodsDataTable dataTable = new kioskDataSet.goodsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8146,7 +8151,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy4(kioskDataSet.goodsDataTable dataTable, global::System.Nullable<int> type) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((type.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
             }
@@ -8165,7 +8170,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodsDataTable GetDataBy10(global::System.Nullable<int> type) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((type.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
             }
@@ -8182,7 +8187,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy5(kioskDataSet.goodsDataTable dataTable, global::System.Nullable<int> type, global::System.Nullable<int> count) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((type.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
             }
@@ -8207,7 +8212,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual kioskDataSet.goodsDataTable GetDataBy11(global::System.Nullable<int> type, global::System.Nullable<int> count) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((type.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
             }
@@ -8546,9 +8551,33 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int id) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string name, string barcode, string price_bay, string price_sale, global::System.Nullable<int> edit, global::System.Nullable<short> type, global::System.Nullable<decimal> count, global::System.Nullable<short> status) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[7];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[8];
             if ((name == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8618,7 +8647,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object ScalarQuery(string barcode) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[8];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[9];
             if ((barcode == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8653,7 +8682,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(global::System.Nullable<short> status, int Original_id) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[9];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[10];
             if ((status.HasValue == true)) {
                 command.Parameters[0].Value = ((short)(status.Value));
             }
@@ -8683,7 +8712,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery1(string name, string price_bay, string price_sale, global::System.Nullable<short> edit, global::System.Nullable<short> type, string barcode, int Original_id) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[10];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[11];
             if ((name == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8743,7 +8772,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery2(string count, string Original_id) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[11];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[12];
             if ((count == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8778,7 +8807,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery3(string count, string Original_id) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[12];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[13];
             if ((count == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -11771,8 +11800,8 @@ WHERE        (in_art.id_goods = ?) AND (in_art.date_time > ?) AND (in_art.date_t
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        in_art.date_time, goods.barcode, goods.name, in_art.[count]\r\nFROM  " +
-                "          (goods INNER JOIN\r\n                         in_art ON goods.id = in_ar" +
-                "t.id_goods)\r\nWHERE  (in_art.date_time > ?) AND (in_art.date_time < ?)";
+                "          (in_art  left JOIN\r\n                         goods ON  in_art.id_goods" +
+                "= goods.id)\r\nWHERE  (in_art.date_time > ?) AND (in_art.date_time < ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
@@ -12070,10 +12099,10 @@ ORDER BY sale.date_time DESC";
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        sale.date_time, goods.barcode, goods.name, sale.[count], sale.price_sale, round(sale.[count] * sale.price_sale,2) AS [sum]
-FROM            (goods INNER JOIN
-                         sale ON goods.id = sale.id_goods)
-WHERE sale.date_time > ? and sale.date_time < ?";
+            this._commandCollection[2].CommandText = "SELECT        sale.date_time, goods.barcode, goods.name, sale.[count], sale.price" +
+                "_sale, round(sale.[count] * sale.price_sale,2) AS [sum]\r\nFROM            (sale l" +
+                "eft JOIN goods ON sale.id_goods = goods.id)\r\nWHERE sale.date_time > ? and sale.d" +
+                "ate_time < ?";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_time1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_time", global::System.Data.DataRowVersion.Current, false, null));
@@ -12091,8 +12120,7 @@ Order by sale.date_time DESC";
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"SELECT        Format(sale.date_time, 'DD.MM.YYYY') AS date_time, goods.barcode, goods.name, SUM(sale.[count]) AS [count], sale.price_sale, 
                          SUM(ROUND(sale.[count] * sale.price_sale, 2)) AS [sum]
-FROM            (goods INNER JOIN
-                         sale ON goods.id = sale.id_goods)
+FROM            (sale left JOIN goods ON sale.id_goods = goods.id)
 WHERE        (sale.date_time > ?) AND (sale.date_time < ?)
 GROUP BY goods.barcode, goods.name, sale.price_sale, Format(sale.date_time, 'DD.MM.YYYY')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;

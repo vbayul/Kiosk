@@ -241,5 +241,23 @@ namespace WindowsFormsApplication1
         {
             clear_goods();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox8.Text != "")
+            {
+                    this.goodsTableAdapter1.DeleteQuery(Convert.ToInt32(textBox8.Text));
+                    MessageBox.Show("Товар удален!");
+                
+                    // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
+                    this.goodseditTableAdapter.Fill(this.kioskDataSet.goodsedit);
+                
+                    clear_goods();
+            }
+            else
+            {
+                MessageBox.Show("Товар не выбран!");
+            }
+        }
     }
 }
