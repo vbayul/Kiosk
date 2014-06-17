@@ -31,64 +31,10 @@ namespace WindowsFormsApplication1
             {
                 string[] arr = new string[5];
                 arr = goods_price.ReturnData();
-                textBox1.Text = arr[0];
-                textBox2.Text = arr[1];
-                textBox3.Text = arr[2];
+                dataGridView1.Rows.Add(arr[0], arr[1], arr[2]);
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //if (textBox1.Text.Length < 13)
-                textBox2.Clear();
-                textBox3.Clear();
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && textBox1.Text.Length > 0)
-            {
-                // дописать запрос который выбирает нужный товар по штрихкоду и заполняет поля
-                // в противном случае выдает что товар не найден.
-                // переделать под массив
-                if (this.goodsTableAdapter1.ScalarQuery(textBox1.Text).ToString() == "1")
-                {
-                    this.textBox2.Text = this.goodsTableAdapter1.GetDataBy3(textBox1.Text)[0][1].ToString();
-                    this.textBox3.Text = this.goodsTableAdapter1.GetDataBy3(textBox1.Text)[0][4].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Товар не найден!");
-                }
-                //this.textBox1.Text = this.goodsTableAdapter1.GetDataBy(textBox2.Text)[0][1].ToString();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ClearText();
-        }
-
-        private void ClearText()
-        {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (textBox2.Text != "" && textBox3.Text != "")
-            {
-                dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text);
-                ClearText();
-            }
-            else
-            {
-                MessageBox.Show("Не все поля заполненны!");
-            }
-        }
-
+          
         private void button5_Click(object sender, EventArgs e)
         {
             // проверка на наличие какх либо записей
@@ -102,7 +48,7 @@ namespace WindowsFormsApplication1
                     i++;
                 }
                 // очищаем грид от предыдущих данных
-                dataGridView1.Rows.Clear();
+                //dataGridView1.Rows.Clear();
 
                 Form_price_rep price_pr = new Form_price_rep();
                 price_pr.Owner = this;

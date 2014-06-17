@@ -78,6 +78,10 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // кнопка которая подтверждает возврат данных в родительскую форму.
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

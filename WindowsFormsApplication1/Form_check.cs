@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
                 check_print.Owner = this;
                 check_print.ShowDialog(this);
 
-                dataGridView1.Rows.Clear();
+                //dataGridView1.Rows.Clear();
             }
             else
             {
