@@ -88,6 +88,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(82, 20);
             this.textBox4.TabIndex = 2;
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // button1
@@ -287,9 +288,10 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.KeyPreview = true;
             this.Name = "Form_goods_income";
             this.Text = "Приход товара";
-            this.Load += new System.EventHandler(this.Form_goods_income_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_goods_income_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

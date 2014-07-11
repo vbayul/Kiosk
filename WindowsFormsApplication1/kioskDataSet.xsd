@@ -97,7 +97,7 @@
               <Mapping SourceColumn="status" DataSetColumn="status" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM goods
@@ -108,7 +108,7 @@ WHERE        (id = ?)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="goods" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="goods" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT    status, type
@@ -176,7 +176,7 @@ WHERE        (type = ?) and  ([count] &lt; ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `goods` (`name`, `barcode`, `price_bay`, `price_sale`, `edit`, `type`, `count`, `status`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
@@ -193,7 +193,7 @@ WHERE        (type = ?) and  ([count] &lt; ?)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ScalarQuery">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(barcode) AS [count]
@@ -205,7 +205,7 @@ WHERE        (barcode = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `goods` SET `status` = ? WHERE (`id` = ?) </CommandText>
@@ -216,7 +216,7 @@ WHERE        (barcode = ?)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery1" Modifier="Public" Name="UpdateQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQuery1">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery1" Modifier="Public" Name="UpdateQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateQuery1">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `goods` SET `name` = ?, `price_bay` = ?, `price_sale` = ?, `edit` = ?, `type` = ?, `barcode` = ? WHERE (`id` = ?) </CommandText>
@@ -232,7 +232,7 @@ WHERE        (barcode = ?)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery2" Modifier="Public" Name="UpdateQuery2" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateQuery2">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery2" Modifier="Public" Name="UpdateQuery2" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateQuery2">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `goods` SET  `count` = [count] + ? WHERE (`id` = ?) </CommandText>
@@ -243,7 +243,7 @@ WHERE        (barcode = ?)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery3" Modifier="Public" Name="UpdateQuery3" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateQuery3">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery3" Modifier="Public" Name="UpdateQuery3" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="UpdateQuery3">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `goods` SET  `count` = [count] - ? WHERE (`id` = ?) </CommandText>
@@ -493,7 +493,8 @@ WHERE        (date_time &gt; ?) AND (date_time &lt; ?)</CommandText>
                     <CommandText>SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit, 
                          goods.type
 FROM            (goods INNER JOIN
-                         goods_type ON goods.type = goods_type.id)</CommandText>
+                         goods_type ON goods.type = goods_type.id)
+ORDER BY goods.barcode</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -507,9 +508,9 @@ FROM            (goods INNER JOIN
               <Mapping SourceColumn="name" DataSetColumn="name" />
               <Mapping SourceColumn="price_bay" DataSetColumn="price_bay" />
               <Mapping SourceColumn="price_sale" DataSetColumn="price_sale" />
-              <Mapping SourceColumn="count" DataSetColumn="count" />
               <Mapping SourceColumn="edit" DataSetColumn="edit" />
               <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="count" DataSetColumn="count1" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
@@ -518,7 +519,8 @@ FROM            (goods INNER JOIN
                     <CommandText>SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit
 FROM            (goods INNER JOIN
                          goods_type ON goods.type = goods_type.id)
-WHERE status  =  1</CommandText>
+WHERE        (goods.status = 1)
+ORDER BY goods.barcode</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -542,9 +544,10 @@ WHERE        (goods.type = ?) and (goods.status =1)</CommandText>
                     <CommandText>SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit
 FROM            (goods INNER JOIN
                          goods_type ON goods.type = goods_type.id)
-WHERE        (goods.type = ?)</CommandText>
+WHERE        (goods.type = ?)
+ORDER BY goods.barcode</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="type" DataSourceName="goods" DataTypeServer="DbType.Int16" DbType="Int32" Direction="Input" ParameterName="type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="type" DataSourceName="goods" DataTypeServer="DbType.Int16" DbType="Int16" Direction="Input" ParameterName="type" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="type" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1285,6 +1288,7 @@ WHERE        (date_time &gt; ?) AND (date_time &lt; ?)</CommandText>
               <xs:element name="count" msprop:Generator_ColumnVarNameInTable="columncount" msprop:Generator_ColumnPropNameInRow="count" msprop:Generator_ColumnPropNameInTable="countColumn" msprop:Generator_UserColumnName="count" type="xs:float" minOccurs="0" />
               <xs:element name="edit" msprop:Generator_ColumnVarNameInTable="columnedit" msprop:Generator_ColumnPropNameInRow="edit" msprop:Generator_ColumnPropNameInTable="editColumn" msprop:Generator_UserColumnName="edit" type="xs:short" minOccurs="0" />
               <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" type="xs:short" minOccurs="0" />
+              <xs:element name="count1" msdata:Caption="count" msprop:Generator_ColumnVarNameInTable="columncount1" msprop:Generator_ColumnPropNameInRow="count1" msprop:Generator_ColumnPropNameInTable="count1Column" msprop:Generator_UserColumnName="count1" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

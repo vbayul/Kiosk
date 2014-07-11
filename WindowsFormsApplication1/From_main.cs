@@ -8,13 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 
 
+
 namespace WindowsFormsApplication1
 {
     public partial class From_main : Form
     {
+
+
         // переменные диапазано начала и окончания текущего дня.
         DateTime currdaystart;
-        DateTime currdayend;        
+        DateTime currdayend;
+        Form_order order;
 
         public From_main()
         {
@@ -55,13 +59,18 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Goods_insert();
+        }
+
+        private void Goods_insert()
+        {
             // создаем дочернюю форму с товарами.            
             Form_goods goods_bay = new Form_goods("0");
             goods_bay.Owner = this;
             goods_bay.ShowDialog(this);
 
             // принимаем результат с 2ой формы при нажатии кнопки "ок" в массив и заполняем поля
-            if (goods_bay.DialogResult == DialogResult.OK) 
+            if (goods_bay.DialogResult == DialogResult.OK)
             {
                 // создаем массив который принимает результаты из дочерней формы
                 string[] arr = new string[5];
@@ -178,7 +187,7 @@ namespace WindowsFormsApplication1
                 // запись продажи товара 
                 saleTableAdapter.Insert(textBox5.Text, DateTime.Now, textBox4.Text, textBox3.Text);
 
-                if (this.goodsTableAdapter1.GetDataBy(Convert.ToInt32(textBox5.Text))[0][6].ToString() == "1")
+                if (this.goodsTableAdapter1.GetDataBy1(Convert.ToInt32(textBox5.Text))[0][6].ToString() == "1")
                 {
                     // снятие товара с остатков
                     goodsTableAdapter1.UpdateQuery3(textBox4.Text, textBox5.Text);
@@ -322,6 +331,35 @@ namespace WindowsFormsApplication1
             Form_rep_by_day rep_by_day = new Form_rep_by_day();
             rep_by_day.Owner = this;
             rep_by_day.ShowDialog();
+        }
+
+        private void From_main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Insert)
+            {
+                Goods_insert();                
+            }
+        }
+
+        private void заказыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (order == null || order.IsDisposed)
+            {
+                order = new Form_order();
+                //order.Owner = this;
+                order.Show();
+            }
+            else
+            {
+                order.Activate();
+            }
+        }
+
+        private void заказыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form_rep_order rep_order = new Form_rep_order();
+            rep_order.Owner = this;
+            rep_order.ShowDialog();
         }
     }
 }

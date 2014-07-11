@@ -20,7 +20,6 @@ namespace WindowsFormsApplication1
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kioskDataSet.goodsedit". При необходимости она может быть перемещена или удалена.
             this.goodseditTableAdapter.Fill(this.kioskDataSet.goodsedit);
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -31,7 +30,7 @@ namespace WindowsFormsApplication1
                 {
                     dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i];
                     return;
-                }  
+                }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -150,7 +149,7 @@ namespace WindowsFormsApplication1
             //MessageBox.Show(this.goodsTableAdapter1.GetDataBy(Convert.ToInt32(textBox8.Text))[0][8].ToString());
             if (textBox8.Text != "")
             {
-                if (this.goodsTableAdapter1.GetDataBy(Convert.ToInt32(textBox8.Text))[0][8].ToString() == "1")
+                if (this.goodsTableAdapter1.GetDataBy1(Convert.ToInt32(textBox8.Text))[0][8].ToString() == "1")
                 {
                     this.goodsTableAdapter1.UpdateQuery(0, Convert.ToInt32(textBox8.Text)).ToString();
                     MessageBox.Show("Товар удален!");
@@ -191,9 +190,9 @@ namespace WindowsFormsApplication1
             // цена продажи
             textBox5.Clear();
             // название типа товара
-            textBox7.Clear();
+            //textBox7.Clear();
             // id типа товара
-            textBox6.Clear();
+            //textBox6.Clear();
 
             checkBox1.Checked = false;
         }
@@ -258,6 +257,17 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Товар не выбран!");
             }
+        }
+
+        private void findGoods()
+        {
+            // процедура поиска по выбраному полю dataGridVeiw
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+                if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i].FormattedValue.ToString().Contains(textBox1.Text.Trim()))
+                {
+                    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i];
+                    return;
+                } 
         }
     }
 }

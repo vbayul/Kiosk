@@ -23,16 +23,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form_goods goods_price = new Form_goods("0");
-            goods_price.Owner = this;
-            goods_price.ShowDialog(this);
-
-            if (goods_price.DialogResult == DialogResult.OK)
-            {
-                string[] arr = new string[5];
-                arr = goods_price.ReturnData();
-                dataGridView1.Rows.Add(arr[0], arr[1], arr[2]);
-            }
+            Goods_insert();
         }
           
         private void button5_Click(object sender, EventArgs e)
@@ -69,6 +60,28 @@ namespace WindowsFormsApplication1
             if (dataGridView1.RowCount != 0)
             {
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            }
+        }
+
+        private void Form_price_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Insert)
+            {
+                Goods_insert();
+            }
+        }
+
+        private void Goods_insert()
+        {
+            Form_goods goods_price = new Form_goods("0");
+            goods_price.Owner = this;
+            goods_price.ShowDialog(this);
+
+            if (goods_price.DialogResult == DialogResult.OK)
+            {
+                string[] arr = new string[5];
+                arr = goods_price.ReturnData();
+                dataGridView1.Rows.Add(arr[0], arr[1], arr[2]);
             }
         }
     }

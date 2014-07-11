@@ -58,6 +58,7 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // button1
             // 
@@ -99,6 +100,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(717, 246);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -114,6 +116,7 @@
             this.nametypeDataGridViewTextBoxColumn.HeaderText = "Тип";
             this.nametypeDataGridViewTextBoxColumn.Name = "nametypeDataGridViewTextBoxColumn";
             this.nametypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nametypeDataGridViewTextBoxColumn.Visible = false;
             // 
             // barcodeDataGridViewTextBoxColumn
             // 

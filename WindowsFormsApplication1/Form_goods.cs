@@ -18,7 +18,6 @@ namespace WindowsFormsApplication1
             type = t;
         }
  
-
         private void button1_Click(object sender, EventArgs e)
         {
             // кнопка которая подтверждает возврат данных в родительскую форму.
@@ -44,15 +43,8 @@ namespace WindowsFormsApplication1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //  процедура поиска по выбраному полю dataGridVeiw
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-                if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i].FormattedValue.ToString().Contains(textBox1.Text.Trim()))
-                {
-                    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i];
-                    return;
-                }  
+            findGoods();
         }
-
 
         private void Form_goods_Load(object sender, EventArgs e)
         {
@@ -82,6 +74,37 @@ namespace WindowsFormsApplication1
         {
             // кнопка которая подтверждает возврат данных в родительскую форму.
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void findGoods()
+        {
+            // процедура поиска по выбраному полю dataGridVeiw
+            for (int i =0; i < dataGridView1.RowCount;i++ )
+                if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i].FormattedValue.ToString().StartsWith(textBox1.Text.Trim()))
+                {
+                    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, i];
+                    return;
+                } 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dataGridView1.Focus();
+            }
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsControl(e.KeyChar))
+            {
+                textBox1.Focus();
+            }
         }
     }
 }

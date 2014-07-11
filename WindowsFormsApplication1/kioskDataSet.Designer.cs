@@ -2065,6 +2065,8 @@ namespace WindowsFormsApplication1 {
             
             private global::System.Data.DataColumn columntype;
             
+            private global::System.Data.DataColumn columncount1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public goodseditDataTable() {
@@ -2180,6 +2182,14 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn count1Column {
+                get {
+                    return this.columncount1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2215,7 +2225,7 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public goodseditRow AddgoodseditRow(short status, string barcode, string name_type, string name, float price_bay, float price_sale, float count, short edit, short type) {
+            public goodseditRow AddgoodseditRow(short status, string barcode, string name_type, string name, float price_bay, float price_sale, float count, short edit, short type, int count1) {
                 goodseditRow rowgoodseditRow = ((goodseditRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2227,7 +2237,8 @@ namespace WindowsFormsApplication1 {
                         price_sale,
                         count,
                         edit,
-                        type};
+                        type,
+                        count1};
                 rowgoodseditRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgoodseditRow);
                 return rowgoodseditRow;
@@ -2260,6 +2271,7 @@ namespace WindowsFormsApplication1 {
                 this.columncount = base.Columns["count"];
                 this.columnedit = base.Columns["edit"];
                 this.columntype = base.Columns["type"];
+                this.columncount1 = base.Columns["count1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2285,12 +2297,15 @@ namespace WindowsFormsApplication1 {
                 base.Columns.Add(this.columnedit);
                 this.columntype = new global::System.Data.DataColumn("type", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntype);
+                this.columncount1 = new global::System.Data.DataColumn("count1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncount1);
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnbarcode.MaxLength = 536870910;
                 this.columnname_type.MaxLength = 255;
                 this.columnname.MaxLength = 255;
+                this.columncount1.Caption = "count";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6000,6 +6015,22 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int count1 {
+                get {
+                    try {
+                        return ((int)(this[this.tablegoodsedit.count1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'count1\' в таблице \'goodsedit\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegoodsedit.count1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablegoodsedit.idColumn);
             }
@@ -6116,6 +6147,18 @@ namespace WindowsFormsApplication1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettypeNull() {
                 this[this.tablegoodsedit.typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscount1Null() {
+                return this.IsNull(this.tablegoodsedit.count1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcount1Null() {
+                this[this.tablegoodsedit.count1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -8042,7 +8085,7 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual kioskDataSet.goodsDataTable GetDataBy(int id) {
+        public virtual kioskDataSet.goodsDataTable GetDataBy1(int id) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             kioskDataSet.goodsDataTable dataTable = new kioskDataSet.goodsDataTable();
@@ -10244,9 +10287,9 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("price_bay", "price_bay");
             tableMapping.ColumnMappings.Add("price_sale", "price_sale");
-            tableMapping.ColumnMappings.Add("count", "count");
             tableMapping.ColumnMappings.Add("edit", "edit");
             tableMapping.ColumnMappings.Add("type", "type");
+            tableMapping.ColumnMappings.Add("count", "count1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10266,14 +10309,16 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
             this._commandCollection[0].CommandText = @"SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit, 
                          goods.type
 FROM            (goods INNER JOIN
-                         goods_type ON goods.type = goods_type.id)";
+                         goods_type ON goods.type = goods_type.id)
+ORDER BY goods.barcode";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit
 FROM            (goods INNER JOIN
                          goods_type ON goods.type = goods_type.id)
-WHERE status  =  1";
+WHERE        (goods.status = 1)
+ORDER BY goods.barcode";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -10288,9 +10333,10 @@ WHERE        (goods.type = ?) and (goods.status =1)";
             this._commandCollection[3].CommandText = @"SELECT        goods.id, goods.status, goods.barcode, goods.name, goods_type.name AS name_type, goods.price_bay, goods.price_sale, goods.[count], goods.edit
 FROM            (goods INNER JOIN
                          goods_type ON goods.type = goods_type.id)
-WHERE        (goods.type = ?)";
+WHERE        (goods.type = ?)
+ORDER BY goods.barcode";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10381,10 +10427,10 @@ WHERE        (goods.type = ?)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy2(kioskDataSet.goodseditDataTable dataTable, global::System.Nullable<int> type) {
+        public virtual int FillBy2(kioskDataSet.goodseditDataTable dataTable, global::System.Nullable<short> type) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((type.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(type.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -10400,10 +10446,10 @@ WHERE        (goods.type = ?)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual kioskDataSet.goodseditDataTable GetDataBy2(global::System.Nullable<int> type) {
+        public virtual kioskDataSet.goodseditDataTable GetDataBy2(global::System.Nullable<short> type) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((type.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(type.Value));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(type.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;

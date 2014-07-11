@@ -74,10 +74,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReport_order_print_gara.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_order_print_gara.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_order_print_order.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_order_print_order.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport_check_print.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport_check_print.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_order.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_order.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CrystalReport_rep_by_day.cs">
@@ -134,6 +152,24 @@
     <Compile Include="Form_check_sale.Designer.cs">
       <DependentUpon>Form_check_sale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_order.Designer.cs">
+      <DependentUpon>Form_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_orders_print_orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_orders_print_orders.Designer.cs">
+      <DependentUpon>Form_orders_print_orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_order_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_order_new.Designer.cs">
+      <DependentUpon>Form_order_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_rep_by_day.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +181,18 @@
     </Compile>
     <Compile Include="Form_rep_by_day_rep.Designer.cs">
       <DependentUpon>Form_rep_by_day_rep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_rep_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_rep_order.Designer.cs">
+      <DependentUpon>Form_rep_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_rep_order_rep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_rep_order_rep.Designer.cs">
+      <DependentUpon>Form_rep_order_rep.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_rep_sale_rep.cs">
       <SubType>Form</SubType>
@@ -263,11 +311,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>kioskDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ordersDataSet.cs">
+      <DependentUpon>ordersDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ordersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ordersDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrystalReport_order_print_gara.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_order_print_gara.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_order_print_order.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_order_print_order.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport_check_print.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_check_print.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_order.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_order.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport_rep_by_day.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -302,11 +371,26 @@
     <EmbeddedResource Include="Form_check_sale.resx">
       <DependentUpon>Form_check_sale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_order.resx">
+      <DependentUpon>Form_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_orders_print_orders.resx">
+      <DependentUpon>Form_orders_print_orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_order_new.resx">
+      <DependentUpon>Form_order_new.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_rep_by_day.resx">
       <DependentUpon>Form_rep_by_day.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_rep_by_day_rep.resx">
       <DependentUpon>Form_rep_by_day_rep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_rep_order.resx">
+      <DependentUpon>Form_rep_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_rep_order_rep.resx">
+      <DependentUpon>Form_rep_order_rep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_rep_sale_rep.resx">
       <DependentUpon>Form_rep_sale_rep.cs</DependentUpon>
@@ -384,6 +468,17 @@
     <None Include="kioskDataSet.xss">
       <DependentUpon>kioskDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ordersDataSet.xsc">
+      <DependentUpon>ordersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ordersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ordersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ordersDataSet.xss">
+      <DependentUpon>ordersDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -399,6 +494,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kiosk.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="orders.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="setup.ico" />

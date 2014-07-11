@@ -17,25 +17,17 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void Form_goods_income_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox4.Text != "")
-            {
-                dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-                ClearTextBox();
-            }
-            else
-            {
-                MessageBox.Show("Товар не указан!");
-            }
+                Add_Row();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Goods_insert();
+        }
+
+        private void Goods_insert()
         {
             Form_goods income_goods = new Form_goods("1");
             income_goods.Owner = this;
@@ -78,8 +70,9 @@ namespace WindowsFormsApplication1
                 // переделать под массив
                 if (this.goodsTableAdapter1.ScalarQuery(textBox2.Text).ToString() == "1")
                 {
-                    this.textBox1.Text = this.goodsTableAdapter1.GetDataBy3(textBox2.Text)[0][1].ToString();
-                    this.textBox3.Text = this.goodsTableAdapter1.GetDataBy3(textBox2.Text)[0][0].ToString();
+                    this.textBox3.Text = this.goodsTableAdapter1.GetDataBy3(textBox2.Text)[0][1].ToString();
+                    this.textBox1.Text = this.goodsTableAdapter1.GetDataBy3(textBox2.Text)[0][0].ToString();
+                    textBox4.Focus();
                  }
                 else
                 {
@@ -154,6 +147,36 @@ namespace WindowsFormsApplication1
             if (dataGridView1.RowCount != 0)
             {
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            }
+        }
+
+        private void Form_goods_income_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Insert)
+            {
+                Goods_insert();
+            }
+        }
+
+        private void Add_Row()
+        {
+            if (textBox1.Text != "" && textBox4.Text != "")
+            {
+                dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+                textBox2.Focus();
+                ClearTextBox();
+            }
+            else
+            {
+                MessageBox.Show("Товар не указан!");
+            }
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Add_Row();
             }
         }
     }

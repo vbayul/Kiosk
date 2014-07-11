@@ -175,8 +175,10 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.KeyPreview = true;
             this.Name = "Form_price";
             this.Text = "Ценники";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_price_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
