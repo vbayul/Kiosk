@@ -291,6 +291,7 @@
             this.KeyPreview = true;
             this.Name = "Form_goods_income";
             this.Text = "Приход товара";
+            this.Load += new System.EventHandler(this.Form_goods_income_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_goods_income_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

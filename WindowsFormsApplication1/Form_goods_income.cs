@@ -179,5 +179,10 @@ namespace WindowsFormsApplication1
                 Add_Row();
             }
         }
+
+        private void Form_goods_income_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

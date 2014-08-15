@@ -281,7 +281,16 @@ namespace WindowsFormsApplication1
             {
                 label4.Text = outcomeTableAdapter1.ScalarQuery1(currdaystart, currdayend).ToString();
             }
-            label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
+
+            if (this.debtTableAdapter1.GetData()[0][0].ToString() == "")
+            {
+                label6.Text = "0";
+            }
+            else
+            {
+                label6.Text = this.debtTableAdapter1.GetData()[0][0].ToString();
+            }
+            //label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -360,6 +369,20 @@ namespace WindowsFormsApplication1
             Form_rep_order rep_order = new Form_rep_order();
             rep_order.Owner = this;
             rep_order.ShowDialog();
+        }
+
+        private void списаниеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_write_off write_off = new Form_write_off();
+            write_off.Owner = this;
+            write_off.ShowDialog();
+        }
+
+        private void списанияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_rep_writeoff rep_writeoff = new Form_rep_writeoff();
+            rep_writeoff.Owner = this;
+            rep_writeoff.ShowDialog(this);
         }
     }
 }

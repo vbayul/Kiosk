@@ -134,6 +134,18 @@
       <DependentUpon>CrystalReport_pricelist.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport_writeoff.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_writeoff.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_rep_writeoff_rep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_rep_writeoff_rep.Designer.cs">
+      <DependentUpon>Form_rep_writeoff_rep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_check.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +223,12 @@
     </Compile>
     <Compile Include="Form_rep_rest_rep.Designer.cs">
       <DependentUpon>Form_rep_rest_rep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_rep_writeoff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_rep_writeoff.Designer.cs">
+      <DependentUpon>Form_rep_writeoff.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_settings.cs">
       <SubType>Form</SubType>
@@ -296,6 +314,12 @@
     <Compile Include="Form_goods.Designer.cs">
       <DependentUpon>Form_goods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_writeoff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_writeoff.Designer.cs">
+      <DependentUpon>Form_writeoff.cs</DependentUpon>
+    </Compile>
     <Compile Include="From_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +385,13 @@
     <EmbeddedResource Include="CrystalReport_pricelist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_pricelist.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_writeoff.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_writeoff.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_rep_writeoff_rep.resx">
+      <DependentUpon>Form_rep_writeoff_rep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_check.resx">
       <DependentUpon>Form_check.cs</DependentUpon>
@@ -440,8 +471,14 @@
     <EmbeddedResource Include="Form_rep_sale.resx">
       <DependentUpon>Form_rep_sale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_rep_writeoff.resx">
+      <DependentUpon>Form_rep_writeoff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_settings.resx">
       <DependentUpon>Form_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_writeoff.resx">
+      <DependentUpon>Form_writeoff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From_main.resx">
       <DependentUpon>From_main.cs</DependentUpon>
