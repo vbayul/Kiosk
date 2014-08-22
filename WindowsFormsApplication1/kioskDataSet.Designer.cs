@@ -16185,12 +16185,16 @@ GROUP BY Format(writeoff.date_write, 'DD.MM.YYYY'), goods.name";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ROUND(SUM(sale.[count] * sale.price_sale) - SUM(outcome.[sum]), 2) " +
-                "AS [summ_in_kassa]\r\nFROM            sale, outcome";
+            this._commandCollection[0].CommandText = "SELECT        ROUND(SUM([count] * price_sale), 2) AS summ_in_kassa\r\nFROM         " +
+                "   sale";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ROUND(SUM([sum]), 2) AS summ_in_kassa\r\nFROM            outcome";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16212,6 +16216,30 @@ GROUP BY Format(writeoff.date_write, 'DD.MM.YYYY'), goods.name";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual kioskDataSet.debtDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            kioskDataSet.debtDataTable dataTable = new kioskDataSet.debtDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(kioskDataSet.debtDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual kioskDataSet.debtDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             kioskDataSet.debtDataTable dataTable = new kioskDataSet.debtDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -1300,11 +1300,11 @@ GROUP BY Format(writeoff.date_write, 'DD.MM.YYYY'), goods.name</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="debtTableAdapter" GeneratorDataComponentClassName="debtTableAdapter" Name="debt" UserDataComponentName="debtTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ROUND(SUM(sale.[count] * sale.price_sale) - SUM(outcome.[sum]), 2) AS [summ_in_kassa]
-FROM            sale, outcome</CommandText>
+                    <CommandText>SELECT        ROUND(SUM([count] * price_sale), 2) AS summ_in_kassa
+FROM            sale</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1313,7 +1313,17 @@ FROM            sale, outcome</CommandText>
             <Mappings>
               <Mapping SourceColumn="summ_in_kassa" DataSetColumn="summ_in_kassa" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ROUND(SUM([sum]), 2) AS summ_in_kassa
+FROM            outcome</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />

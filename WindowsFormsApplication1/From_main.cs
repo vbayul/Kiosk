@@ -288,7 +288,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                label6.Text = this.debtTableAdapter1.GetData()[0][0].ToString();
+                label6.Text = Convert.ToString(Convert.ToDouble(this.debtTableAdapter1.GetData()[0][0].ToString()) - Convert.ToDouble(this.debtTableAdapter1.GetDataBy()[0][0].ToString()));
             }
             //label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
         }
