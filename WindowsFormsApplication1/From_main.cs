@@ -271,7 +271,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                label2.Text = saleTableAdapter.ScalarQuery1(currdaystart, currdayend).ToString(); 
+                label2.Text = saleTableAdapter.ScalarQuery1(currdaystart, currdayend).ToString();
             }
             if (outcomeTableAdapter1.ScalarQuery(currdaystart, currdayend).ToString() == "0")
             {
@@ -281,15 +281,7 @@ namespace WindowsFormsApplication1
             {
                 label4.Text = outcomeTableAdapter1.ScalarQuery1(currdaystart, currdayend).ToString();
             }
-
-            if (this.debtTableAdapter1.GetData()[0][0].ToString() == "")
-            {
-                label6.Text = "0";
-            }
-            else
-            {
-                label6.Text = Convert.ToString(Convert.ToDouble(this.debtTableAdapter1.GetData()[0][0].ToString()) - Convert.ToDouble(this.debtTableAdapter1.GetDataBy()[0][0].ToString()));
-            }
+            label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
             //label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
         }
 
