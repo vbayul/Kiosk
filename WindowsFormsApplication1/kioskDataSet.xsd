@@ -721,6 +721,15 @@ WHERE        ([datetime] &gt; ?) AND ([datetime] &lt; ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="kioskConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery2" Modifier="Public" Name="ScalarQuery2" QueryType="Scalar" ScalarCallRetval="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ScalarQuery2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        round(SUM([sum]) ,2)AS Expr1
+FROM            outcome</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pricelistTableAdapter" GeneratorDataComponentClassName="pricelistTableAdapter" Name="pricelist" UserDataComponentName="pricelistTableAdapter">

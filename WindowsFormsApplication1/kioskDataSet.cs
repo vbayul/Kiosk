@@ -13,3 +13,9 @@ namespace WindowsFormsApplication1.kioskDataSetTableAdapters {
     public partial class goodsTableAdapter {
     }
 }
+namespace WindowsFormsApplication1 {
+    
+    
+    public partial class kioskDataSet {
+    }
+}

@@ -281,8 +281,14 @@ namespace WindowsFormsApplication1
             {
                 label4.Text = outcomeTableAdapter1.ScalarQuery1(currdaystart, currdayend).ToString();
             }
-            label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
-            //label6.Text = Convert.ToString(Convert.ToDouble(label2.Text) - Convert.ToDouble(label4.Text));
+            if (debtTableAdapter1.GetData()[0][0].ToString() != "0")
+            {
+                label6.Text = Convert.ToString(Convert.ToDouble(debtTableAdapter1.GetData()[0][0].ToString()) - Convert.ToDouble(debtTableAdapter1.GetDataBy()[0][0].ToString()));
+            }
+            else
+            {
+                label6.Text = "0";
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
